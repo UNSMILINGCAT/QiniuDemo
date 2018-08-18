@@ -3,7 +3,11 @@ package com.ycwh.root;
 import com.qiniu.common.QiniuException;
 import com.qiniu.common.Zone;
 import com.qiniu.storage.BucketManager;
+import com.qiniu.storage.model.FetchRet;
 import com.qiniu.storage.model.FileInfo;
+
+import java.io.File;
+import java.util.ArrayList;
 
 public class ResourcesManager extends QiniuManagerSupport
 {
@@ -75,7 +79,7 @@ public class ResourcesManager extends QiniuManagerSupport
     }
 
     /**
-     * 同账号下的同一空间进行文件移动
+     * 同账号下进行文件移动,但位于同空间时，则相当于重命名
      *
      * @param fromeFileKey
      * @param toFileKey
@@ -108,5 +112,139 @@ public class ResourcesManager extends QiniuManagerSupport
             return false;
         }
         return true;
+    }
+
+    /**
+     * 复制文件
+     *
+     * @param fromeFileKey
+     * @param toFileKey
+     * @return
+     */
+    public boolean copyFile(String fromeFileKey, String toFileKey)
+    {
+        return copyFile(getBucket(), fromeFileKey, getBucket(), toFileKey);
+    }
+
+    /**
+     * 复制文件
+     *
+     * @param fromeBucket
+     * @param fromeFileKey
+     * @param toBucket
+     * @param toFileKey
+     * @return
+     */
+    public boolean copyFile(String fromeBucket, String fromeFileKey, String toBucket, String toFileKey)
+    {
+        try
+        {
+            getBucketManager().copy(fromeBucket, fromeFileKey, toBucket, toFileKey);
+        } catch (QiniuException qe)
+        {
+            System.err.println(qe.code());
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 删除空间文件
+     *
+     * @param key
+     * @return
+     */
+    public String removeFile(String key)
+    {
+        return removeFile(getBucket(), key);
+    }
+
+    /**
+     * 删除空间的文件
+     *
+     * @param bucket
+     * @param key
+     * @return
+     */
+    public String removeFile(String bucket, String key)
+    {
+        try
+        {
+            getBucketManager().delete(bucket, key);
+        } catch (QiniuException qe)
+        {
+            System.err.println(qe.code());
+            System.err.println(qe.response.toString());
+            return null;
+        }
+        return key;
+    }
+
+    /**
+     * 获取空间文件列表
+     *
+     * @param bucket
+     * @param prefix
+     * @param limit
+     * @param delimiter
+     * @return
+     */
+    public BucketManager.FileListIterator getFileListIterator(String bucket, String prefix, int limit, String
+            delimiter)
+    {
+        return getBucketManager().createFileListIterator(bucket, prefix, limit, delimiter);
+    }
+
+    /**
+     * 返回包含了文件信息的文件列表
+     *
+     * @return
+     */
+    public ArrayList<FileInfo> getFileInfo()
+    {
+        return getFileInfo(getBucket(), "", 1000, "");
+    }
+
+    /**
+     * 返回包含了文件信息的文件列表{@link ArrayList}<{@link FileInfo}>
+     *
+     * @param bucket
+     * @param prefix
+     * @param limit
+     * @param delimiter
+     * @return
+     */
+    public ArrayList<FileInfo> getFileInfo(String bucket, String prefix, int limit, String delimiter)
+    {
+        ArrayList<FileInfo> arrayList = new ArrayList<>();
+        BucketManager.FileListIterator fileListIterator = getFileListIterator(bucket, prefix, limit, delimiter);
+        while (fileListIterator.hasNext())
+        {
+            FileInfo[] infos = fileListIterator.next();
+            for (FileInfo info : infos)
+            {
+                arrayList.add(info);
+            }
+        }
+        return arrayList;
+    }
+
+    public FetchRet putRemoteFile(String remoteSrcUrl, String key)
+    {
+        return putRemoteFile(remoteSrcUrl, getBucket(), key);
+    }
+
+    public FetchRet putRemoteFile(String remoteSrcUrl, String bucket, String key)
+    {
+        FetchRet fetchRet = null;
+        try
+        {
+            fetchRet = getBucketManager().fetch(remoteSrcUrl, bucket, key);
+        } catch (QiniuException qe)
+        {
+            qe.printStackTrace();
+            return null;
+        }
+        return fetchRet;
     }
 }
