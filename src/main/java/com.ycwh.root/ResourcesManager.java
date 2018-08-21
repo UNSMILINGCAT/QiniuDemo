@@ -229,11 +229,26 @@ public class ResourcesManager extends QiniuManagerSupport
         return arrayList;
     }
 
+    /**
+     * 抓取网络资源到空间
+     *
+     * @param remoteSrcUrl
+     * @param key
+     * @return
+     */
     public FetchRet putRemoteFile(String remoteSrcUrl, String key)
     {
         return putRemoteFile(remoteSrcUrl, getBucket(), key);
     }
 
+    /**
+     * 抓取网络资源到空间
+     *
+     * @param remoteSrcUrl
+     * @param bucket
+     * @param key
+     * @return
+     */
     public FetchRet putRemoteFile(String remoteSrcUrl, String bucket, String key)
     {
         FetchRet fetchRet = null;
