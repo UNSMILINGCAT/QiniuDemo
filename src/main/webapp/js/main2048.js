@@ -8,7 +8,6 @@ var score = 0;
 var hasConflicted = new Array();// 用来判断每个格子是否已经发生过碰撞，从而避免一下子加好几个格子
 
 $(document).ready(function () {
-    alert("ready");
     newgame();
 });
 

@@ -6,7 +6,6 @@ import com.qiniu.storage.BucketManager;
 import com.qiniu.storage.model.FetchRet;
 import com.qiniu.storage.model.FileInfo;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public class ResourcesManager extends QiniuManagerSupport
@@ -46,7 +45,7 @@ public class ResourcesManager extends QiniuManagerSupport
      * @param fileName
      * @return
      */
-    public FileInfo getFileInfo(String fileName)
+    public FileInfo getFileListInfo(String fileName)
     {
         try
         {
@@ -200,9 +199,9 @@ public class ResourcesManager extends QiniuManagerSupport
      *
      * @return
      */
-    public ArrayList<FileInfo> getFileInfo()
+    public ArrayList<FileInfo> getFileListInfo()
     {
-        return getFileInfo(getBucket(), "", 1000, "");
+        return getFileListInfo(getBucket(), "", 1000, "");
     }
 
     /**
@@ -214,7 +213,7 @@ public class ResourcesManager extends QiniuManagerSupport
      * @param delimiter
      * @return
      */
-    public ArrayList<FileInfo> getFileInfo(String bucket, String prefix, int limit, String delimiter)
+    public ArrayList<FileInfo> getFileListInfo(String bucket, String prefix, int limit, String delimiter)
     {
         ArrayList<FileInfo> arrayList = new ArrayList<>();
         BucketManager.FileListIterator fileListIterator = getFileListIterator(bucket, prefix, limit, delimiter);
