@@ -29,13 +29,13 @@
     {
 %>
 <div>
-    <div style="height: 500px; width: 500px">
+    <span style="height: 500px; width: 500px">
         <img src="http://image.szycwh.cn/<%=info.key%>">
-    </div>
+    </span>
     <textarea style="width: 120px;height: 120px ;text-decoration: blink" name="text" cols="20px" rows="20px"></textarea>
 </div>
 <%}%>
-</div> 
+</div>
 <p style="white-space: normal">fagai oner gn eia</p>
 <h2>aopgnrekngisw</h2>
 <h2>aldp;gornaeujga<strong>blue</strong></h2>
