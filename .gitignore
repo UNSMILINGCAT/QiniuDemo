@@ -3,3 +3,4 @@
 /target/
 *.iml
 /src/test
+/src/main/webapp/META-INF
