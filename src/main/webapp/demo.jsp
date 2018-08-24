@@ -12,6 +12,11 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="css/demo.css"/>
+    <style type="text/css">
+        span{
+            background-color: #333333;
+        }
+    </style>
 </head>
 <body>
 <%!
