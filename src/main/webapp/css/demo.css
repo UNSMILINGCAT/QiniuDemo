@@ -1,0 +1,20 @@
+p {
+    color: red;
+}
+
+h2 {
+    color: red;
+}
+
+h2 strong {
+    color: blue;
+}
+
+input[type="text"] {
+    width: 150px;
+    display: block;
+    margin-bottom: auto;
+    align-content: center;
+    align-self: center;
+    background-color: #bbada0;
+}
