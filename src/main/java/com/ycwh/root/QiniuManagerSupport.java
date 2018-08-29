@@ -4,23 +4,35 @@ import com.qiniu.common.Zone;
 import com.qiniu.storage.Configuration;
 import com.qiniu.util.Auth;
 
+import java.util.Properties;
+import java.util.ResourceBundle;
+
 public class QiniuManagerSupport implements QiniuManager
 {
     private Configuration cfg;//配置类
     private String bucket;//上传的空间名
     private Auth auth;
+    private ResourceBundle resourceBundle;
 
     /**
      * 构造方法，根据传入的accessKey，secretKey和bucket进行一些初始化
      *
-     * @param accessKey
-     * @param secretKey
-     * @param bucket
+     * @param key
      */
-    public QiniuManagerSupport(String accessKey, String secretKey, String bucket)
+    public QiniuManagerSupport(String key)
     {
-        setAuth(accessKey, secretKey);
-        setBucket(bucket);
+        resourceBundle = ResourceBundle.getBundle(key);
+        setAuth(resourceBundle.getString("accessKey"), resourceBundle.getString("secretKey"));
+        setBucket(resourceBundle.getString("bucket"));
+    }
+
+    /**
+     * 返回配置文件的绑定类
+     * @return
+     */
+    public ResourceBundle getResourceBundle()
+    {
+        return resourceBundle;
     }
 
     /**

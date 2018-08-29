@@ -8,6 +8,25 @@
     <%--<link rel="stylesheet" type="text/css" href="css/style.css"/>--%>
 </head>
 <style type="text/css">
+    body {
+
+    }
+    div{
+        width: 200px;
+        text-align: center;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 2px solid #A9C0E2;
+    }
+
+    h1{
+        padding-top: 0px;
+    }
+    ul {
+        list-style: none;
+    }
+
     a {
         color: blue;
         text-decoration: none;
@@ -17,16 +36,24 @@
     a:visited {
         color: gray;
     }
-    a:hover{
+
+    a:hover {
         color: #FF0000;
     }
 
 </style>
 <body>
-
-<a href="image.jsp">云盘图片</a>
-<a href="2048.html">2048</a>
-<a href="demo.jsp">demo</a>
-<a href="#">测试</a>
+<div>
+    <h1>物品录入</h1>
+    <input type="text" placeholder="用户名"/><br><br>
+    <input type="password" placeholder="密码"/>
+</div>
+<%--<ul>--%>
+    <%--<li><a href="image.jsp">云盘图片</a></li>--%>
+    <%--<li><a href="2048.html">2048</a></li>--%>
+    <%--<li><a href="demo.jsp">demo</a></li>--%>
+    <%--<li><a href="#">测试</a></li>--%>
+    <%--<li><a href="tea.jsp">茶</a></li>--%>
+<%--</ul>--%>
 </body>
 </html>

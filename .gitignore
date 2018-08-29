@@ -4,3 +4,4 @@
 *.iml
 /src/test
 /src/main/webapp/META-INF
+/src/main/java/config.properties

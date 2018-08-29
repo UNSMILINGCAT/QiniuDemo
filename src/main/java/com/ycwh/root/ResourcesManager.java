@@ -5,6 +5,7 @@ import com.qiniu.common.Zone;
 import com.qiniu.storage.BucketManager;
 import com.qiniu.storage.model.FetchRet;
 import com.qiniu.storage.model.FileInfo;
+import com.sun.istack.internal.Nullable;
 
 import java.util.ArrayList;
 
@@ -15,13 +16,10 @@ public class ResourcesManager extends QiniuManagerSupport
     /**
      * 构造方法，根据传入的accessKey，secretKey和bucket进行一些初始化
      *
-     * @param accessKey
-     * @param secretKey
-     * @param bucket
      */
-    public ResourcesManager(String accessKey, String secretKey, String bucket)
+    public ResourcesManager()
     {
-        super(accessKey, secretKey, bucket);
+        super("config");
         setCfg(Zone.zone0());
     }
 
@@ -235,7 +233,7 @@ public class ResourcesManager extends QiniuManagerSupport
      * @param key
      * @return
      */
-    public FetchRet putRemoteFile(String remoteSrcUrl, String key)
+    public FetchRet putRemoteFile(String remoteSrcUrl,@Nullable String key)
     {
         return putRemoteFile(remoteSrcUrl, getBucket(), key);
     }
@@ -248,7 +246,7 @@ public class ResourcesManager extends QiniuManagerSupport
      * @param key
      * @return
      */
-    public FetchRet putRemoteFile(String remoteSrcUrl, String bucket, String key)
+    public FetchRet putRemoteFile(String remoteSrcUrl, String bucket,@Nullable String key)
     {
         FetchRet fetchRet = null;
         try

@@ -27,14 +27,12 @@ public class Uploaddata extends QiniuManagerSupport
     /**
      * 构造方法，根据传入的accessKey，secretKey和bucket进行一些初始化
      *
-     * @param accessKey
-     * @param secretKey
-     * @param bucket
+     * @param key
      */
-    public Uploaddata(String accessKey, String secretKey, String bucket)
+    public Uploaddata(String key)
     {
-        super(accessKey, secretKey, bucket);
-        setSimUpToken(bucket);
+        super(key);
+        setSimUpToken(getResourceBundle().getString("bucket"));
     }
 
     /**
