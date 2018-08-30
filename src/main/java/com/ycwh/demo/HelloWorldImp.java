@@ -11,6 +11,6 @@ public class HelloWorldImp implements HelloWorld
     @Override
     public void print()
     {
-        System.out.print("print");
+        System.out.println("print");
     }
 }
