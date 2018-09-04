@@ -11,11 +11,11 @@
         <environment id="development">
             <transactionManager type="JDBC"></transactionManager>
             <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="driver" value="${jdbc.driver}"/>
                 <property name="url"
-                          value="jdbc:mysql://localhost:3306/ssm?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=GMT%2B8"/>
-                <property name="username" value="1"/>
-                <property name="password" value="1"/>
+                          value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.userName}"/>
+                <property name="password" value="${jdbc.userPassword}"/>
             </dataSource>
         </environment>
     </environments>
