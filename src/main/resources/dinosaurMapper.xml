@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC
         "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper>
-    <select id="selectAll">
-
+<mapper namespace="com.ycwh.demo.chapter4.DinosaurMapper">
+    <select id="selectAll" resultType="com.ycwh.demo.chapter4.Dinosaur">
+        select id,name as dinosaurName ,sex,lv from ssm.dinosaur
     </select>
 </mapper>
