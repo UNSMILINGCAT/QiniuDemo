@@ -7,6 +7,9 @@
     <typeAliases>
         <typeAlias type="com.ycwh.demo.chapter3.Role" alias="Role"/>
     </typeAliases>
+    <typeHandlers>
+        <typeHandler handler="com.ycwh.demo.chapter4.MyTypeHandler" javaType="string" jdbcType="VARCHAR"/>
+    </typeHandlers>
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"></transactionManager>

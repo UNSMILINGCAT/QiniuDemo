@@ -12,7 +12,8 @@ public class BuildSqlSessionFactory
     private static SqlSessionFactory sqlSessionFactory = null;
     private static String resource = "mybatis-config.xml";
 
-    public static void buildSqlSessionFactory()
+
+    private static void buildSqlSessionFactory()
     {
         InputStream inputStream;
         try
@@ -25,6 +26,15 @@ public class BuildSqlSessionFactory
         }
     }
 
+    /**
+     * 强制重构SqlSessionFactory
+     * 一般用于修改了配置文件
+     */
+    private static void reBuildSqlSessionFactory()
+    {
+        buildSqlSessionFactory();
+    }
+
     public static SqlSessionFactory getSqlSessionFactory()
     {
         if (sqlSessionFactory == null)
@@ -32,5 +42,19 @@ public class BuildSqlSessionFactory
             buildSqlSessionFactory();
         }
         return sqlSessionFactory;
+    }
+
+    /**
+     * 设置读取的配置文件，如果不设置，则使用默认配置
+     *
+     * @param cfx
+     */
+    public static void setResource(String cfx)
+    {
+        resource = cfx;
+        if (sqlSessionFactory != null)
+        {
+            reBuildSqlSessionFactory();
+        }
     }
 }
