@@ -4,17 +4,12 @@ public class Dinosaur
 {
     private Long id;
     private String dinosaurName;
-    private String sex;
-    private String lv;
+    private SexEnum sex;
+    private int lv;
 
     public Long getId()
     {
         return id;
-    }
-
-    public void setId(Long id)
-    {
-        this.id = id;
     }
 
     public String getDinosaurName()
@@ -27,22 +22,22 @@ public class Dinosaur
         this.dinosaurName = dinosaurName;
     }
 
-    public String getSex()
+    public SexEnum getSex()
     {
         return sex;
     }
 
-    public void setSex(String sex)
+    public void setSex(SexEnum sex)
     {
         this.sex = sex;
     }
 
-    public String getLv()
+    public int getLv()
     {
         return lv;
     }
 
-    public void setLv(String lv)
+    public void setLv(int lv)
     {
         this.lv = lv;
     }
