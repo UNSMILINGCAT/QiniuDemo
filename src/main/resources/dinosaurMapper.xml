@@ -9,8 +9,8 @@
         <result property="sex" column="sex" typeHandler="com.ycwh.demo.chapter4.SexEnumTypeHandler"/>
         <result property="lv" column="lv"/>
     </resultMap>
-    <select id="selectAll" resultMap="result_map">
-        select * from ssm.dinosaur where id=2
+    <select id="selectAll" resultMap="result_map" databaseId="mysql">
+        select * from ssm.dinosaur
     </select>
     <insert id="insert" parameterType="dinosaur">
         insert into ssm.dinosaur(name, sex, lv) values (#{dinosaurName},#{sex,typeHandler=com.ycwh.demo.chapter4.SexEnumTypeHandler},#{lv})

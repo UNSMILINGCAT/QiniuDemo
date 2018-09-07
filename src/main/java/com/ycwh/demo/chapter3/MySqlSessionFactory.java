@@ -1,5 +1,6 @@
 package com.ycwh.demo.chapter3;
 
+import com.mysql.cj.jdbc.JdbcConnection;
 import org.apache.ibatis.datasource.pooled.PooledDataSource;
 import org.apache.ibatis.mapping.Environment;
 import org.apache.ibatis.session.Configuration;
@@ -7,6 +8,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
+
+import java.sql.Connection;
 
 public class MySqlSessionFactory
 {

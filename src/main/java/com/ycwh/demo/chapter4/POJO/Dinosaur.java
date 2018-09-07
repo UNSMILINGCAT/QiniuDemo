@@ -1,4 +1,6 @@
-package com.ycwh.demo.chapter4;
+package com.ycwh.demo.chapter4.POJO;
+
+import com.ycwh.demo.chapter4.SexEnum;
 
 public class Dinosaur
 {

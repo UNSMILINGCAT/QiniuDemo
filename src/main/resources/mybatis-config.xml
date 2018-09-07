@@ -7,13 +7,18 @@
     <!--类型别名-->
     <typeAliases>
         <typeAlias type="com.ycwh.demo.chapter3.Role" alias="Role"/>
-        <typeAlias type="com.ycwh.demo.chapter4.Dinosaur" alias="dinosaur"/>
+        <typeAlias type="com.ycwh.demo.chapter4.POJO.Dinosaur" alias="dinosaur"/>
+        <typeAlias type="com.ycwh.demo.chapter4.POJO.TestFile" alias="testfile"/>
+        <typeAlias type="com.ycwh.demo.chapter4.POJO.ArkDinosaur" alias="arkdinosaur"/>
     </typeAliases>
 
     <!--类型处理-->
-    <typeHandlers>
-        <typeHandler handler="com.ycwh.demo.chapter4.MyTypeHandler" javaType="string" jdbcType="VARCHAR"/>
-    </typeHandlers>
+    <!--<typeHandlers>-->
+    <!--<typeHandler handler="com.ycwh.demo.chapter4.MyTypeHandler" javaType="string" jdbcType="VARCHAR"/>-->
+    <!--</typeHandlers>-->
+    <!--<objectFactory type="com.ycwh.demo.chapter4.MyObjectFactory">-->
+    <!--<property name="prop1" value="value1"/>-->
+    <!--</objectFactory>-->
     <!--环境配置-->
     <environments default="development">
         <environment id="development">
@@ -27,8 +32,15 @@
             </dataSource>
         </environment>
     </environments>
+    <databaseIdProvider type="DB_VENDOR">
+        <property name="Oracle" value="oracle"/>
+        <property name="MySQL" value="mysql"/>
+        <property name="DB2" value="db2"/>
+    </databaseIdProvider>
     <mappers>
         <mapper resource="RoleMapper.xml"/>
         <mapper resource="dinosaurMapper.xml"/>
+        <mapper resource="fileMapper.xml"/>
+        <mapper resource="arkdinosaurMapper.xml"/>
     </mappers>
 </configuration>

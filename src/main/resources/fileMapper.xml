@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ycwh.demo.chapter4.FileMapper">
+    <resultMap id="result_map" type="testfile">
+        <result property="id" column="id"/>
+        <result property="content" column="content" typeHandler="org.apache.ibatis.type.BlobTypeHandler"/>
+    </resultMap>
+    <select id="selectAll" resultMap="result_map">
+        select * from ssm.t_file
+    </select>
+    <insert id="insert" parameterType="testfile">
+        insert into ssm.t_file(content) values (#{content,typeHandler=org.apache.ibatis.type.BlobTypeHandler})
+    </insert>
+</mapper>
