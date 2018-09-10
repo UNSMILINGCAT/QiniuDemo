@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ycwh.demo.chapter5.mapper.EmployeeMapper">
+    <resultMap id="result_Employee" type="com.ycwh.demo.chapter5.POJO.Employee">
+        <id column="id" property="id"/>
+        <result column="real_name" property="realName"/>
+        <result column="sex" property="sexEnum" typeHandler="com.ycwh.demo.chapter5.type_handler.SexTypeHandler"/>
+        <result column="birthday" property="birthday"/>
+        <result column="mobile" property="mobile"/>
+        <result column="email" property="email"/>
+        <result column="position" property="position"/>
+        <result column="note" property="note"/>
+        <association property="workCard" column="id"
+                     select="com.ycwh.demo.chapter5.mapper.WorkCardMapper.getWorkCardByEmpId"/>
+        <collection property="employeeTaskList" column="id"
+                    select="com.ycwh.demo.chapter5.mapper.EmployeeTaskMapper.getEmployeeTaskByEmpId"/>
+        <discriminator javaType="int" column="sex">
+            <case value="1" resultMap="result_MaleEmployee"/>
+            <case value="0" resultMap="result_FemaleEmployee"/>
+        </discriminator>
+    </resultMap>
+    <resultMap id="result_FemaleEmployee" type="com.ycwh.demo.chapter5.POJO.FemaleEmployee" extends="result_Employee">
+        <association property="femaleHealthForm" column="id"
+                     select="com.ycwh.demo.chapter5.mapper.FemaleHealthFormMapper.getFemaleHealthForm"/>
+    </resultMap>
+    <resultMap id="result_MaleEmployee" type="com.ycwh.demo.chapter5.POJO.MaleEmployee" extends="result_Employee">
+        <association property="maleHealthForm" column="id"
+                     select="com.ycwh.demo.chapter5.mapper.MaleHealthFormMapper.getMaleHealthForm"/>
+    </resultMap>
+    <select id="getEmployee" parameterType="int" resultMap="result_Employee">
+          select * from t_employee where id=#{id}
+    </select>
+</mapper>

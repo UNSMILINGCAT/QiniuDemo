@@ -14,7 +14,7 @@
 
     <!--类型处理-->
     <!--<typeHandlers>-->
-    <!--<typeHandler handler="com.ycwh.demo.chapter4.MyTypeHandler" javaType="string" jdbcType="VARCHAR"/>-->
+    <!--<typeHandler type_handler="com.ycwh.demo.chapter4.MyTypeHandler" javaType="string" jdbcType="VARCHAR"/>-->
     <!--</typeHandlers>-->
     <!--<objectFactory type="com.ycwh.demo.chapter4.MyObjectFactory">-->
     <!--<property name="prop1" value="value1"/>-->
