@@ -41,6 +41,6 @@
         <mapper resource="RoleMapper.xml"/>
         <mapper resource="dinosaurMapper.xml"/>
         <mapper resource="fileMapper.xml"/>
-        <mapper resource="arkdinosaurMapper.xml"/>
+        <mapper resource="ArkDinosaurMapper.xml"/>
     </mappers>
 </configuration>
