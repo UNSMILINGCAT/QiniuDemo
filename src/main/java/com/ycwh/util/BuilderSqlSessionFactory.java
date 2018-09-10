@@ -34,9 +34,9 @@ public class BuilderSqlSessionFactory
      * @param environment
      * @return
      */
-    public static SqlSessionFactory buildSqlSessionFactory(String environment)
+    public static SqlSessionFactory buildSqlSessionFactory(String environmentId)
     {
-        SqlSessionFactory sqlSessionFactory = sqlSessionFactoryMap.get(environment);
+        SqlSessionFactory sqlSessionFactory = sqlSessionFactoryMap.get(environmentId);
         if (!Objects.isNull(sqlSessionFactory))
             return sqlSessionFactory;
         else
@@ -45,7 +45,7 @@ public class BuilderSqlSessionFactory
             try
             {
                 inputStream = org.apache.ibatis.io.Resources.getResourceAsStream(CONFIG_PATH);
-                sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream, environment);
+                sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream, environmentId);
             } catch (IOException io)
             {
                 io.printStackTrace();
@@ -60,7 +60,7 @@ public class BuilderSqlSessionFactory
                     io.printStackTrace();
                 }
             }
-            sqlSessionFactoryMap.put(environment, sqlSessionFactory);
+            sqlSessionFactoryMap.put(environmentId, sqlSessionFactory);
             return sqlSessionFactory;
         }
     }

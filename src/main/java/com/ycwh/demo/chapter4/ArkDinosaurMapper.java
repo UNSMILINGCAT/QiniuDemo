@@ -9,7 +9,7 @@ public interface ArkDinosaurMapper
 {
     public List<ArkDinosaur> select();
 
-    public ArkDinosaur[] selectColumn(ArkDinosaurColumn column);
+    public ArkDinosaur[] selectColumn(String column);
 
     public void insert(ArkDinosaur arkDinosaur);
 

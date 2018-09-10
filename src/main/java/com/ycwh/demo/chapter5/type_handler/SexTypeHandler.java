@@ -1,9 +1,7 @@
-package com.ycwh.demo.chapter4;
+package com.ycwh.demo.chapter5.type_handler;
 
-import com.sun.istack.internal.logging.Logger;
+import com.ycwh.demo.chapter5.SexEnum;
 import org.apache.ibatis.type.JdbcType;
-import org.apache.ibatis.type.MappedJdbcTypes;
-import org.apache.ibatis.type.MappedTypes;
 import org.apache.ibatis.type.TypeHandler;
 
 import java.sql.CallableStatement;
@@ -11,12 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@MappedTypes(SexEnum.class)
-@MappedJdbcTypes(JdbcType.INTEGER)
-public class SexEnumTypeHandler implements TypeHandler<SexEnum>
+public class SexTypeHandler implements TypeHandler<SexEnum>
 {
-    Logger logger = Logger.getLogger(SexEnumTypeHandler.class);
-
     @Override
     public void setParameter(PreparedStatement preparedStatement, int i, SexEnum sexEnum, JdbcType jdbcType) throws
             SQLException
@@ -27,21 +21,20 @@ public class SexEnumTypeHandler implements TypeHandler<SexEnum>
     @Override
     public SexEnum getResult(ResultSet resultSet, String s) throws SQLException
     {
-        String sex = resultSet.getString(s);
-        return SexEnum.getSexByName(sex);
+        int index = resultSet.getInt(s);
+        SexEnum sexEnum = SexEnum.values()[index];
+        return sexEnum;
     }
 
     @Override
     public SexEnum getResult(ResultSet resultSet, int i) throws SQLException
     {
-        String sex = resultSet.getString(i);
-        return SexEnum.getSexByName(sex);
+        return null;
     }
 
     @Override
     public SexEnum getResult(CallableStatement callableStatement, int i) throws SQLException
     {
-        String sex = callableStatement.getString(i);
-        return SexEnum.getSexByName(sex);
+        return null;
     }
 }
