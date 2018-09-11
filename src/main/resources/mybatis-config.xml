@@ -42,5 +42,11 @@
         <mapper resource="dinosaurMapper.xml"/>
         <mapper resource="fileMapper.xml"/>
         <mapper resource="ArkDinosaurMapper.xml"/>
+        <mapper resource="chapter5/EmployeeMapper.xml"/>
+        <mapper resource="chapter5/WorkCardMapper.xml"/>
+        <mapper resource="chapter5/FemaleHealthFormMapper.xml"/>
+        <mapper resource="chapter5/MaleHealthFormMapper.xml"/>
+        <mapper resource="chapter5/EmployeeTaskMapper.xml"/>
+        <!--<mapper resource="chapter5/TaskMapper.xml"/>-->
     </mappers>
 </configuration>

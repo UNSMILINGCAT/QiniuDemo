@@ -15,7 +15,7 @@ public class SexTypeHandler implements TypeHandler<SexEnum>
     public void setParameter(PreparedStatement preparedStatement, int i, SexEnum sexEnum, JdbcType jdbcType) throws
             SQLException
     {
-        preparedStatement.setString(i, sexEnum.getSex());
+        preparedStatement.setInt(i, sexEnum.getIndex());
     }
 
     @Override

@@ -5,11 +5,11 @@ import java.util.Date;
 
 public class AutoGenerateId
 {
-    public static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yymmddhhmm");
+    public static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyMMddHHmmss");
 
-    public static int getAutoGenerateId()
+    public static long getAutoGenerateId()
     {
-        return Integer.parseInt(simpleDateFormat.format(new Date()));
+        return Long.parseLong(simpleDateFormat.format(new Date()));
     }
 
 }

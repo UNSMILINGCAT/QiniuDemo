@@ -11,6 +11,7 @@
         <association column="task_id" property="task"
                      select="com.ycwh.demo.chapter5.mapper.TaskMapper.getTask"/>
     </resultMap>
+
     <select id="getEmployeeTaskByEmpId" resultMap="result_employee_task">
           select * from t_employee_task where emp_id=#{empId}
     </select>
