@@ -6,3 +6,4 @@
 /src/main/webapp/META-INF
 /src/main/java/config.properties
 *.properties
+!log4j.properties
