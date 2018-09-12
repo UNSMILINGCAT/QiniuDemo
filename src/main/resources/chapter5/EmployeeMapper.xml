@@ -3,7 +3,7 @@
         "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ycwh.demo.chapter5.mapper.EmployeeMapper">
-
+    <cache/>
     <resultMap id="result_Employee" type="com.ycwh.demo.chapter5.POJO.Employee">
         <id column="id" property="id"/>
         <result column="real_name" property="realName"/>

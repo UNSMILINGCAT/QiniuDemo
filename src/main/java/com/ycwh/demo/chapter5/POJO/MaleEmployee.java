@@ -1,6 +1,8 @@
 package com.ycwh.demo.chapter5.POJO;
 
-public class MaleEmployee extends Employee
+import java.io.Serializable;
+
+public class MaleEmployee extends Employee implements Serializable
 {
     private MaleHealthForm maleHealthForm;
 
