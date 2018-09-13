@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ycwh.demo.chapter4.ArkDinosaurMapper">
+
+    <resultMap id="result_map" type="arkDinosaur">
+        <result property="name" column="name"/>
+        <result property="feeds" column="feed" typeHandler="com.ycwh.demo.chapter4.ArkDinosaurHandler"/>
+
+    </resultMap>
+
+    <select id="select" resultMap="result_map" databaseId="mysql">
+        select *
+        from ssm.ark_dinosaur
+    </select>
+    <insert id="insert" parameterType="arkDinosaur">
+        insert into ssm.ark_dinosaur (name, feed) values
+            (#{name}, #{feeds,typeHandler=com.ycwh.demo.chapter4.ArkDinosaurHandler})
+    </insert>
+    <update id="upDate" parameterType="arkDinosaur">
+        update ssm.ark_dinosaur
+        set id = #{id}, feed = #{feeds,typeHandler=com.ycwh.demo.chapter4.ArkDinosaurHandler}
+        where name = #{name}
+    </update>
+    <select id="selectColumn" parameterType="string" resultMap="result_map">
+        select name
+        from ssm.ark_dinosaur
+        where name = #{na}
+    </select>
+
+</mapper>
