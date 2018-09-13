@@ -50,6 +50,7 @@
         <mapper resource="chapter5/FemaleHealthFormMapper.xml"/>
         <mapper resource="chapter5/MaleHealthFormMapper.xml"/>
         <mapper resource="chapter5/EmployeeTaskMapper.xml"/>
-        <!--<mapper resource="chapter5/TaskMapper.xml"/>-->
+        <mapper resource="chapter5/TaskMapper.xml"/>
+        <mapper resource="chapter5/PdCountRoleParamsMapper.xml"/>
     </mappers>
 </configuration>
