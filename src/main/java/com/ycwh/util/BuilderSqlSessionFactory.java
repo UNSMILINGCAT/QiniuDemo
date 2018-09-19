@@ -31,7 +31,7 @@ public class BuilderSqlSessionFactory
     /**
      * 根据传入的environment的id获取数据库环境配置
      *
-     * @param environment
+     * @param environmentId
      * @return
      */
     public static SqlSessionFactory buildSqlSessionFactory(String environmentId)
