@@ -4,7 +4,6 @@ import com.qiniu.common.Zone;
 import com.qiniu.storage.Configuration;
 import com.qiniu.util.Auth;
 
-import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class QiniuManagerSupport implements QiniuManager

@@ -1,7 +1,5 @@
 package com.ycwh.demo.chapter3;
 
-import org.apache.ibatis.annotations.Select;
-
 import java.util.List;
 
 public interface RoleMapper

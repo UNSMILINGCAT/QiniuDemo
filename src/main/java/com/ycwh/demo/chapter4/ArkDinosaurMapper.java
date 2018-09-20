@@ -1,7 +1,6 @@
 package com.ycwh.demo.chapter4;
 
 import com.ycwh.demo.chapter4.POJO.ArkDinosaur;
-import com.ycwh.demo.chapter4.POJO.ArkDinosaurColumn;
 
 import java.util.List;
 

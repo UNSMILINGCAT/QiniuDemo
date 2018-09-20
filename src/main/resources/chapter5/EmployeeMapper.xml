@@ -49,6 +49,6 @@
     </select>
     <insert id="insert" parameterType="com.ycwh.demo.chapter5.POJO.Employee">
         insert into t_employee (real_name, sex)
-        values(#{realName},#{sexEnum,typeHandler=com.ycwh.demo.chapter5.type_handler.SexTypeHandler})
+        values(#{realName},#{sexEnum,typeHandler=com.ycwh.test.demo.chapter5.type_handler.SexTypeHandler})
     </insert>
 </mapper>

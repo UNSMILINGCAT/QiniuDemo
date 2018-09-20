@@ -1,4 +1,4 @@
-package com.ycwh.demo;
+package com.ycwh.demo.chapter2;
 
 public interface HelloWorld
 {

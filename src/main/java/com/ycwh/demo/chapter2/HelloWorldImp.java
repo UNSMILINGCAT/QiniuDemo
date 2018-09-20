@@ -1,4 +1,5 @@
-package com.ycwh.demo;
+package com.ycwh.demo.chapter2;
+
 
 public class HelloWorldImp implements HelloWorld
 {
