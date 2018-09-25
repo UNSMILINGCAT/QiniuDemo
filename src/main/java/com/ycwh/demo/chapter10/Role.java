@@ -30,4 +30,9 @@ public class Role
         this.roleName = roleName;
         this.note = note;
     }
+
+    public Role()
+    {
+
+    }
 }
