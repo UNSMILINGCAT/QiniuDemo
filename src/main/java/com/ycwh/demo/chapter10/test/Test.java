@@ -1,9 +1,9 @@
-package com.ycwh.demo.chapter10;
+package com.ycwh.demo.chapter10.test;
 
+import com.ycwh.demo.chapter10.Role;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 @ComponentScan(basePackageClasses = {Role.class})
 public class Test

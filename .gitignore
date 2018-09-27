@@ -2,8 +2,6 @@
 /out/
 /target/
 *.iml
-/src/test
 /src/main/webapp/META-INF
-/src/main/java/config.properties
-*.properties
-!log4j.properties
+/src/main/resources/config.properties
+/src/main/resources/jdbc.properties
