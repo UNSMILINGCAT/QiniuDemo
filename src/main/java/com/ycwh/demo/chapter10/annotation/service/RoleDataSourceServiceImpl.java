@@ -15,8 +15,7 @@ import java.sql.SQLException;
 @Component
 public class RoleDataSourceServiceImpl implements RoleDataSourceService
 {
-    @Autowired
-    @Qualifier(value = "dataSource")
+//    @Autowired
     DataSource dataSource = null;
 
     @Override

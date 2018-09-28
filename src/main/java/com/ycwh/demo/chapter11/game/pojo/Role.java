@@ -1,16 +1,9 @@
-package com.ycwh.demo.chapter10;
+package com.ycwh.demo.chapter11.game.pojo;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
-@Component(value = "role")
 public class Role
 {
-    @Value("1")
     private int id;
-    @Value("roleName")
     private String roleName;
-    @Value("note")
     private String note;
 
     public int getId()
@@ -41,16 +34,5 @@ public class Role
     public void setNote(String note)
     {
         this.note = note;
-    }
-
-    public Role(String roleName, String note)
-    {
-        this.roleName = roleName;
-        this.note = note;
-    }
-
-    public Role()
-    {
-
     }
 }

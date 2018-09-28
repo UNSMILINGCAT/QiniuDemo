@@ -1,4 +1,4 @@
-package com.ycwh.demo;
+package com.ycwh.demo.chapter1;
 
 import java.lang.reflect.Method;
 
@@ -8,7 +8,7 @@ public class Demo
     {
         try
         {
-            DemoReflect object = (DemoReflect) Class.forName("com.ycwh.demo.DemoReflect").newInstance();
+            DemoReflect object = (DemoReflect) Class.forName("com.ycwh.demo.chapter1.DemoReflect").newInstance();
             Method method = object.getClass().getMethod("print", null);
             method.invoke(object, null);
         } catch (Exception e)

@@ -1,4 +1,4 @@
-package com.ycwh.demo;
+package com.ycwh.demo.chapter1;
 
 public class DemoReflect
 {

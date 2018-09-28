@@ -3,11 +3,11 @@ package com.ycwh.demo.chapter10.annotation.comfig;
 import com.ycwh.demo.chapter10.Role;
 import com.ycwh.demo.chapter10.annotation.service.RoleDataSourceService;
 import com.ycwh.demo.chapter10.annotation.service.RoleDataSourceServiceImpl;
+import com.ycwh.demo.chapter10.profile.ProfileDataSource;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.*;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -15,10 +15,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@ComponentScan(basePackages = {"com.ycwh.demo.chapter10.annotation"})
-@ImportResource(locations = {"classpath:chapter10/spring-dataSource.xml"})
+@ComponentScan(basePackageClasses = {ProfileDataSource.class})
+//@ImportResource(locations = {"classpath:chapter10/spring-dataSource.xml"})
+@PropertySource(value = {"classpath:jdbc.properties"})
 public class ApplicationConfig
 {
+
+    @Bean
+    public PropertySourcesPlaceholderConfigurer getPropertySourcesPlaceholderConfigurer()
+    {
+        return new PropertySourcesPlaceholderConfigurer();
+    }
 
     public void testConnection()
     {
