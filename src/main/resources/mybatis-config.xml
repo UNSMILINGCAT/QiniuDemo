@@ -30,8 +30,8 @@
                 <property name="driver" value="${jdbc.driver}"/>
                 <property name="url"
                           value="${jdbc.url}"/>
-                <property name="username" value="${jdbc.userName}"/>
-                <property name="password" value="${jdbc.userPassword}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
             </dataSource>
         </environment>
     </environments>
