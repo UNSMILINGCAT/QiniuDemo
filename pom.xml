@@ -41,12 +41,6 @@
         </dependency>
 
         <dependency>
-            <groupId>aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
-            <version>1.5.3</version>
-        </dependency>
-
-        <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
             <version>1.4</version>
@@ -66,9 +60,9 @@
         </dependency>
         
         <dependency>
-            <groupId>aspectj</groupId>
+            <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-            <version>1.5.3</version>
+            <version>1.7.3</version>
         </dependency>
 
         <dependency>

@@ -5,7 +5,7 @@ import org.aspectj.lang.annotation.*;
 @Aspect
 public class RoleAspect
 {
-    @Pointcut("execution(* com.ycwh.demo.chapter11.aop.service.RoleServiceImpl.printRole(..))")
+    @Pointcut("execution(* com.ycwh.demo.chapter11.aop.service.RoleServiceImpl.printRole())")
     public void print() {}
 
     @Before("print()")
