@@ -2,6 +2,7 @@ package com.ycwh.util;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.core.io.Resource;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,12 +12,22 @@ import java.util.Objects;
 
 public class BuilderSqlSessionFactory
 {
-
     /**
      * 配置文件路径
      */
     private static final String CONFIG_PATH = "mybatis-config.xml";
     private static final Map<String, SqlSessionFactory> sqlSessionFactoryMap = new HashMap<>();
+    private Resource configLocation;
+
+    public Resource getConfigLocation()
+    {
+        return configLocation;
+    }
+
+    public void setConfigLocation(Resource configLocation)
+    {
+        this.configLocation = configLocation;
+    }
 
     /**
      * 获取默认id为development的环境配置

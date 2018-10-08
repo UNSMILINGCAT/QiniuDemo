@@ -13,6 +13,6 @@
         select * from ssm.dinosaur
     </select>
     <insert id="insert" parameterType="dinosaur">
-        insert into ssm.dinosaur(name, sex, lv) values (#{dinosaurName},#{sex,typeHandler=com.ycwh.test.demo.chapter4.SexEnumTypeHandler},#{lv})
+        insert into ssm.dinosaur(name, sex, lv) values (#{dinosaurName},#{sex,typeHandler=com.ycwh.demo.chapter4.SexEnumTypeHandler},#{lv})
     </insert>
 </mapper>

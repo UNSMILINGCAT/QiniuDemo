@@ -16,7 +16,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @ComponentScan(basePackageClasses = {ProfileDataSource.class})
-//@ImportResource(locations = {"classpath:chapter10/spring-dataSource.xml"})
+//@ImportResource(locations = {"classpath:chapter10/spring-cfx.xml"})
 @PropertySource(value = {"classpath:jdbc.properties"})
 public class ApplicationConfig
 {

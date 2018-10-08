@@ -13,7 +13,9 @@ import javax.sql.DataSource;
 @PropertySource(value = {"classpath:jdbc.properties"})
 public class ProfileTest
 {
+    //自动装载
     @Autowired
+    //当有多个配置时，限定自动配置者
     @Qualifier(value = "dataSource")
     private DataSource dataSource = null;
 

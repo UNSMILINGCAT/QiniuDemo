@@ -17,11 +17,11 @@
     </select>
     <insert id="insert" parameterType="arkDinosaur">
         insert into ssm.ark_dinosaur (name, feed) values
-            (#{name}, #{feeds,typeHandler=com.ycwh.test.demo.chapter4.ArkDinosaurHandler})
+            (#{name}, #{feeds,typeHandler=com.ycwh.demo.chapter4.ArkDinosaurHandler})
     </insert>
     <update id="upDate" parameterType="arkDinosaur">
         update ssm.ark_dinosaur
-        set id = #{id}, feed = #{feeds,typeHandler=com.ycwh.test.demo.chapter4.ArkDinosaurHandler}
+        set id = #{id}, feed = #{feeds,typeHandler=com.ycwh.demo.chapter4.ArkDinosaurHandler}
         where name = #{name}
     </update>
     <select id="selectColumn" parameterType="string" resultMap="result_map">
