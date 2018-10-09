@@ -29,7 +29,7 @@
         <constructor-arg ref="sqlSessionFactory"/>
     </bean>
     <!--<bean id="roleMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
-    <!--<property name="mapperInterface" value="com.ycwh.demo.chapter12.mapper.RoleMapper"/>-->
+    <!--<property name="mapperInterface" value="com.ycwh.demo.chapter12.mapper.RoleMapper.xml"/>-->
     <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
     <!--&lt;!&ndash;如果同时注入sqlSessionTemplate和SqlSessionFactory，则只会启用SqlSessionTemplate&ndash;&gt;-->
     <!--<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>-->

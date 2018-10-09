@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Test
 {
-    private static Logger logger = Logger.getLogger(Test.class);
+    private Logger logger = Logger.getLogger(Test.class);
 
     /**
      * 测试spring-bean的value的class：用法
@@ -39,7 +39,7 @@ public class Test
         role.setNote
                 ("贪狼，为七彩仙尊七魄之黄魄，主气运，常常能获得强大的法器，是王林的福星，所得之物多次被王林夺走。登场时处剑尊凌天候麾下，被派去妖灵之地保护凌天候的弟子。后被送往罗天星域抓捕王林。误进入望月体内，被困于望月排泄处，使得其身上一直有十分难闻的臭味。后王林为躲避姚家追杀进入望月体内，夺走贪狼的古神鼎。\n" +
                         "后机缘巧合下来到太古星辰，再遇王林，被夺走大量宝物，但身上气味也被王林祛除。后被双子大天尊带入仙罡大陆，被当作玩物。");
-//        template.insert("com.ycwh.demo.chapter12.mapper.RoleMapper.insertRole", role);
+//        template.insert("com.ycwh.demo.chapter12.mapper.RoleMapper.xml.insertRole", role);
         roleMapper.insertRole(role);
 //        template.commit();
     }
