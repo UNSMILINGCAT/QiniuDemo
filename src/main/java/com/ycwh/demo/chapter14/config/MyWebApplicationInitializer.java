@@ -5,7 +5,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 /**
  * 使用注解的方式配置IoC容器
  */
-public class WebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer
+public class MyWebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer
 {
     @Override
     protected Class<?>[] getRootConfigClasses()
@@ -16,12 +16,12 @@ public class WebApplicationInitializer extends AbstractAnnotationConfigDispatche
     @Override
     protected Class<?>[] getServletConfigClasses()
     {
-        return new Class[]{};
+        return new Class[]{WebConfig.class};
     }
 
     @Override
     protected String[] getServletMappings()
     {
-        return new String[]{"*.do"};
+        return new String[]{"*.dj"};
     }
 }
