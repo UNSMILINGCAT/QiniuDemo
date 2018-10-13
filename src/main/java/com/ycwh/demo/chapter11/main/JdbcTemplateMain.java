@@ -1,11 +1,8 @@
 package com.ycwh.demo.chapter11.main;
 
-import com.mysql.cj.jdbc.SuspendableXAConnection;
 import com.ycwh.demo.chapter11.game.pojo.Role;
-import org.apache.ibatis.executor.statement.RoutingStatementHandler;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.jdbc.core.ConnectionCallback;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.sql.Connection;
