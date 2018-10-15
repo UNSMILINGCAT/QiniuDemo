@@ -1,7 +1,7 @@
 package com.ycwh.test.demo.chapter12;
 
 import com.ycwh.demo.chapter12.mapper.RoleMapper;
-import com.ycwh.demo.chapter12.pojo.Role;
+import com.ycwh.pojo.Role;
 import com.ycwh.util.BuilderSqlSessionFactory;
 import org.apache.log4j.Logger;
 import org.mybatis.spring.SqlSessionFactoryBean;

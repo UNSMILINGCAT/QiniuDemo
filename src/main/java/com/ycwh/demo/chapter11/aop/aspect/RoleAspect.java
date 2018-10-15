@@ -2,7 +2,7 @@ package com.ycwh.demo.chapter11.aop.aspect;
 
 import com.ycwh.demo.chapter11.aop.service.RoleVerifier;
 import com.ycwh.demo.chapter11.aop.service.RoleVerifierImpl;
-import com.ycwh.demo.chapter11.game.pojo.Role;
+import com.ycwh.pojo.Role;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 

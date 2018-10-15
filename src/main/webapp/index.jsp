@@ -46,7 +46,7 @@
 <div>
     <h1>物品录入</h1>
     <input type="text" placeholder="用户名"/><br><br>
-    <input type="password" placeholder="密码"/>
+    <input type="note" placeholder="密码"/>
 </div>
 <%--<ul>--%>
     <%--<li><a href="image.jsp">云盘图片</a></li>--%>

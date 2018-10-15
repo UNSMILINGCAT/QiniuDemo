@@ -1,6 +1,6 @@
 package com.ycwh.demo.chapter11.main;
 
-import com.ycwh.demo.chapter11.game.pojo.Role;
+import com.ycwh.pojo.Role;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;

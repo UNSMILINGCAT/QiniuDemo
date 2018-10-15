@@ -1,14 +1,9 @@
 package com.ycwh.demo.chapter12.main;
 
-import com.ycwh.demo.chapter11.game.pojo.Role;
-import javafx.application.Application;
+import com.ycwh.pojo.Role;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class Main
 {

@@ -1,4 +1,4 @@
-package com.ycwh.demo.chapter13.pojo;
+package com.ycwh.pojo;
 
 public class Role
 {

@@ -3,9 +3,9 @@ package com.ycwh.demo.chapter11.game.main;
 import com.ycwh.demo.chapter11.game.ProxyBeanFactory;
 import com.ycwh.demo.chapter11.game.interceptor.Interceptor;
 import com.ycwh.demo.chapter11.game.interceptor.RoleInterceptor;
-import com.ycwh.demo.chapter11.game.pojo.Role;
 import com.ycwh.demo.chapter11.game.service.RoleService;
 import com.ycwh.demo.chapter11.game.service.RoleServiceImpl;
+import com.ycwh.pojo.Role;
 
 public class GameMain
 {

@@ -1,6 +1,6 @@
 package com.ycwh.demo.chapter11.aop.service;
 
-import com.ycwh.demo.chapter11.game.pojo.Role;
+import com.ycwh.pojo.Role;
 import org.springframework.stereotype.Component;
 
 @Component

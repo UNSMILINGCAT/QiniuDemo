@@ -1,4 +1,4 @@
-package com.ycwh.demo.chapter13.mapper;
+package com.ycwh.demo.chapter14.mapper;
 
 import com.ycwh.pojo.Role;
 import org.springframework.stereotype.Repository;
@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RoleMapper
 {
-    public int insertRole(Role role);
+    Role getRole(int id);
 }

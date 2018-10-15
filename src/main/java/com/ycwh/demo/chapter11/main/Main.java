@@ -2,9 +2,8 @@ package com.ycwh.demo.chapter11.main;
 
 import com.ycwh.demo.chapter11.aop.config.AopConfig;
 import com.ycwh.demo.chapter11.aop.service.RoleService;
-import com.ycwh.demo.chapter11.aop.service.RoleServiceImpl;
 import com.ycwh.demo.chapter11.aop.service.RoleVerifier;
-import com.ycwh.demo.chapter11.game.pojo.Role;
+import com.ycwh.pojo.Role;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

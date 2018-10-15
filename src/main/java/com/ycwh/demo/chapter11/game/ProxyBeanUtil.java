@@ -2,8 +2,6 @@ package com.ycwh.demo.chapter11.game;
 
 
 import com.ycwh.demo.chapter11.game.interceptor.Interceptor;
-import com.ycwh.demo.chapter11.game.pojo.Role;
-import com.ycwh.demo.chapter11.game.service.RoleService;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

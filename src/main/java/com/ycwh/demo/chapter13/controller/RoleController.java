@@ -1,8 +1,8 @@
 package com.ycwh.demo.chapter13.controller;
 
-import com.ycwh.demo.chapter13.pojo.Role;
 import com.ycwh.demo.chapter13.service.RoleListService;
 import com.ycwh.demo.chapter13.service.RoleService;
+import com.ycwh.pojo.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 

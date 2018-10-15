@@ -1,7 +1,7 @@
 package com.ycwh.demo.chapter13.main;
 
-import com.ycwh.demo.chapter13.pojo.Role;
 import com.ycwh.demo.chapter13.service.RoleListService;
+import com.ycwh.pojo.Role;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

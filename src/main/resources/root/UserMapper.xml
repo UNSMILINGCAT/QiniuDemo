@@ -5,7 +5,7 @@
 <mapper namespace="com.ycwh.root.Mapper.UserMapper">
     <resultMap id="user" type="com.ycwh.root.POJO.User">
         <result property="userName" column="user_name"/>
-        <result property="password" column="password"/>
+        <result property="note" column="note"/>
     </resultMap>
     <select id="select" resultMap="user" parameterType="string">
         select *
@@ -13,11 +13,11 @@
         where #{userName}
     </select>
     <insert id="insert" parameterType="com.ycwh.root.POJO.User">
-        insert into ssm.qiniu_user (user_name, password) values (#{userName}, #{password})
+        insert into ssm.qiniu_user (user_name, note) values (#{userName}, #{note})
     </insert>
     <update id="update" parameterType="com.ycwh.root.POJO.User">
         update ssm.qiniu_user
-        set password = #{password}
+        set note = #{note}
         where user_name = #{userName}
     </update>
 </mapper>
