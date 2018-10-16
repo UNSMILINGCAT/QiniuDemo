@@ -10,9 +10,18 @@
     </resultMap>
     <select id="getRole" parameterType="int" resultMap="role">
         select
+            id,
             role_name,
             note
         from t_role
-        where id = #{i}
+        where id = #{id}
     </select>
+    <select id="findRoles" parameterType="role" resultMap="role">
+        select *
+        from t_role
+        where role_name = #{roleName}
+    </select>
+    <insert id="insert" parameterType="role">
+        insert into t_role (role_name, note) values (#{roleName}, #{note})
+    </insert>
 </mapper>

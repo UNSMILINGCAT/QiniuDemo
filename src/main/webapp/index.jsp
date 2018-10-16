@@ -55,5 +55,6 @@
     <%--<li><a href="#">测试</a></li>--%>
     <%--<li><a href="tea.jsp">茶</a></li>--%>
 <%--</ul>--%>
+<script src="js/main.js"></script>
 </body>
 </html>

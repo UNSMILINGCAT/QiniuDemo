@@ -5,6 +5,8 @@ import com.ycwh.pojo.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RoleService
 {
@@ -14,5 +16,20 @@ public class RoleService
     public Role getRole(int id)
     {
         return roleMapper.getRole(id);
+    }
+
+    public List<Role> findRoles(Role role)
+    {
+        return roleMapper.findRoles(role);
+    }
+
+    public int insertRoles(List<Role> roleList)
+    {
+        int count = 0;
+        for (Role role : roleList)
+        {
+            count += roleMapper.insert(role);
+        }
+        return count;
     }
 }

@@ -1,10 +1,13 @@
 package com.ycwh.pojo;
 
+import com.ycwh.demo.chapter14.pojo.PageParams;
+
 public class Role
 {
     private int id;
     private String roleName;
     private String note;
+    private PageParams pageParams = null;
 
     public int getId()
     {
@@ -34,5 +37,15 @@ public class Role
     public void setNote(String note)
     {
         this.note = note;
+    }
+
+    public PageParams getPageParams()
+    {
+        return pageParams;
+    }
+
+    public void setPageParams(PageParams pageParams)
+    {
+        this.pageParams = pageParams;
     }
 }
