@@ -75,4 +75,36 @@ public class MyController
         mv.setView(new MappingJackson2JsonView());
         return mv;
     }
+
+    @RequestMapping("/addRoles")
+    public ModelAndView addRoles(@RequestBody List<Role> roleList)
+    {
+        ModelAndView mv = new ModelAndView();
+        //添加角色
+        int total = roleService.insertRoles(roleList);
+        mv.addObject("total", total);
+        mv.setView(new MappingJackson2JsonView());
+        return mv;
+    }
+
+    @RequestMapping("/commonParamPojo2")
+    public ModelAndView commonParamPojo2(String roleName, String note)
+    {
+        logger.info("roleName =>" + roleName);
+        logger.info("note =>" + note);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("index.jsp");
+        return mv;
+    }
+
+    @RequestMapping("showRoleJsonInfo")
+    public ModelAndView showRoleJsonInfo(int id, String roleName, String note)
+    {
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("id", id);
+        mv.addObject("roleName", roleName);
+        mv.addObject("note", note);
+        mv.setView(new MappingJackson2JsonView());
+        return mv;
+    }
 }
