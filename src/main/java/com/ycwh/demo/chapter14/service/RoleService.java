@@ -32,4 +32,9 @@ public class RoleService
         }
         return count;
     }
+
+    public int insertRole(Role role)
+    {
+        return roleMapper.insert(role);
+    }
 }

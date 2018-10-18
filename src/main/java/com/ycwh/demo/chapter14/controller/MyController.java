@@ -5,9 +5,8 @@ import com.ycwh.demo.chapter14.service.RoleService;
 import com.ycwh.pojo.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
@@ -16,9 +15,7 @@ import java.util.List;
 
 //注解@Controller表示它是一个控制器
 @Controller("myController")
-//表明当请求的URI在/my下的时候才有该控制器响应
 @RequestMapping("/")
-//@ComponentScan(basePackages = {"com.ycwh.demo.chapter14.*"})
 public class MyController
 {
     Logger logger = Logger.getLogger(this.getClass());
@@ -97,7 +94,7 @@ public class MyController
         return mv;
     }
 
-    @RequestMapping("showRoleJsonInfo")
+    @RequestMapping("/showRoleJsonInfo")
     public ModelAndView showRoleJsonInfo(int id, String roleName, String note)
     {
         ModelAndView mv = new ModelAndView();
@@ -105,6 +102,42 @@ public class MyController
         mv.addObject("roleName", roleName);
         mv.addObject("note", note);
         mv.setView(new MappingJackson2JsonView());
+        return mv;
+    }
+
+    @RequestMapping("/addRole")
+    public String addRole(Model model, String roleName, String note)
+    {
+        Role role = new Role();
+        role.setRoleName(roleName);
+        role.setNote(note);
+        //插入角色后，会回填角色编号
+        roleService.insertRole(role);
+        //绑定重定向数据模型
+        model.addAttribute("roleName", roleName);
+        model.addAttribute("note", note);
+        model.addAttribute("id", role.getId());
+        return "redirect:/showRoleJsonInfo.do";
+    }
+
+    @RequestMapping("/requestAttribute")
+    public ModelAndView requestAttr(@RequestAttribute(value = "id", required = false) int id)
+    {
+        ModelAndView mv = new ModelAndView();
+        Role role = roleService.getRole(id);
+        mv.addObject("role", role);
+        mv.setView(new MappingJackson2JsonView());
+        return mv;
+    }
+
+    @RequestMapping("/sessionAttribute")
+    public ModelAndView sessionAttribute(@SessionAttribute("id") int id)
+    {
+        ModelAndView mv = new ModelAndView();
+        Role role = roleService.getRole(id);
+        mv.addObject("role", role);
+        mv.addObject("id", id);
+        mv.setViewName("sessionAttribute.jsp");
         return mv;
     }
 }

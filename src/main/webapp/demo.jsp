@@ -22,7 +22,7 @@
 <%!
     String accessKey = "1QoD4PQAQeY6UKu_8QvqfakW8hl4wJAFryEVM0XK";
     String secretKey = "4UE1jDrwX5wbZE_Xho9nVPrQlZdUuv9PzxyU5EYT";
-    ResourcesManager resourcesManager = new ResourcesManager(accessKey, secretKey, "yckj");
+    ResourcesManager resourcesManager = new ResourcesManager();
 %>
 
 <input type="text" title="请输入accessKey" style="align-content: center; align-self: center"/>
