@@ -6,6 +6,7 @@ import com.ycwh.pojo.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
@@ -138,6 +139,16 @@ public class MyController
         mv.addObject("role", role);
         mv.addObject("id", id);
         mv.setViewName("sessionAttribute.jsp");
+        return mv;
+    }
+
+    @RequestMapping("/getRoleByModelMap")
+    public ModelAndView getRoleByModelMap(@RequestParam("id") int id, ModelMap modelMap)
+    {
+        Role role=roleService.getRole(id);
+        ModelAndView mv=new ModelAndView();
+        mv.setView(new MappingJackson2JsonView());
+        modelMap.addAttribute("role",role);
         return mv;
     }
 }
